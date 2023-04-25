@@ -6,27 +6,34 @@
   <script type="text/javascript" src="https://3001.scriptcdn.net/code/static/1"></script>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
-</head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  
 
 <body>
   <div id="root">
-    <div class="div">
-      <div class="div-2"></div>
-      <div class="div-3">NO PURPOSE COIN</div>
-      <div class="div-4">NO PURPOSE COIN (FOR NPCS)</div>
-      <div class="div-5">
-        <picture>
-          <img src="./images/meme.png" class="image">
-        </picture>
-        <div class="builder-image-sizer image-sizer"></div>
+    <div class="container">
+      <h1 class="logo-title">NO PURPOSE COIN</h1>
+      <h2 class="sub-title">NO PURPOSE COIN (FOR NPCS)</h2>
+      <div class="coin-wrapper">
+        <img src="/images/meme.png" class="coin-image">
       </div>
-      <div class="no-purpose-coin-this-coin-has">NO PURPOSE COIN THIS COIN HAS NO PURPOSE CONTRACT: 0X...... SUPPLY:
-        1234567891011 LP: 92.41% RESERVE: 6.9% NO PURPOSE RESERVE:.69%</div>
-      <div class="div-6">© 2023 NPCS un-Inc.</div>
+      <div class="coin-info">
+        NO PURPOSE COIN THIS COIN HAS NO PURPOSE <br> CONTRACT: 0X...... SUPPLY: 1234567891011 <br> LP: 92.41% RESERVE: 6.9% NO PURPOSE RESERVE:.69%
+      </div>
+      <div class="footer">© 2023 NPCS un-Inc.</div>
     </div>
   </div>
 
+  <script>
+    const tl = gsap.timeline({ defaults: { duration: 1 } });
 
+    tl.from('.logo-title', { y: -50, opacity: 0, ease: 'power2.out' })
+      .from('.sub-title', { y: -50, opacity: 0, ease: 'power2.out' }, '-=0.5')
+      .from('.coin-wrapper', { y: -50, opacity: 0, ease: 'power2.out' }, '-=0.5')
+      .from('.coin-info', { y: -50, opacity: 0, ease: 'power2.out' }, '-=0.5')
+      .from('.footer', { y: 50, opacity: 0, ease: 'power2.out' }, '-=0.5');
+  </script>
 </body>
 
 </html>
